@@ -2,3 +2,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+.sidenav{
+    display: flex;
+    flex-direction: column;
+    z-index: 1051;
+}
+

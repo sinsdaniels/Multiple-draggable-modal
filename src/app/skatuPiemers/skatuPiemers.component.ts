@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Itabula } from '../tabula/tabula.component';
+import { ISideNav } from '../sidenav/sidenav.component';
 
 @Component({
   selector: 'app-skatuPiemers',
@@ -20,6 +21,11 @@ export class SkatuPiemersComponent implements OnInit {
     },
     modalId: 1
   }
+  projektuNavCfg: ISideNav = {
+    virsraksts: "Projekti",
+    icon: "description",
+    modalId: 1
+  }
 
   darbuCfg: Itabula = {
     virsraksts: "Darbi",
@@ -33,6 +39,11 @@ export class SkatuPiemersComponent implements OnInit {
     },
     modalId: 2
   }
+  darbuNavCfg: ISideNav = {
+    virsraksts: "Darbi",
+    icon: "library_books",
+    modalId: 2
+  }
 
   darbiniekuCfg: Itabula = {
     virsraksts: "Darbinieki",
@@ -42,6 +53,11 @@ export class SkatuPiemersComponent implements OnInit {
       vards: "Vārds",
       uzvards: "Uzvārds"
     },
+    modalId: 3
+  }
+  darbiniekuNavCfg: ISideNav = {
+    virsraksts: "Darbinieki",
+    icon: "person",
     modalId: 3
   }
 

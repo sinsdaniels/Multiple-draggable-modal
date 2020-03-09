@@ -16,7 +16,7 @@ export class ModalComponent implements OnInit {
 
   public modalId: number;
   public targetId: number = 0;
-  public modalTitle: string;s
+  public modalTitle: string;
   constructor() {
     interact('.modalDragable').draggable({
       inertia: true,
@@ -37,7 +37,7 @@ export class ModalComponent implements OnInit {
 
       target.style.webkitTransform =
         target.style.transform =
-        'translate(' + x + 'px, ' + y + 'px)'
+        'translate(' + x/3 + 'px, ' + y/3 + 'px)'
 
       target.setAttribute('data-x', x);
       target.setAttribute('data-y', y);

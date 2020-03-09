@@ -1,5 +1,9 @@
 <div class="flex">
-    <!-- <app-sidenav class="flex bg-light"></app-sidenav> -->
+    <div class="sidenav">
+        <app-sidenav [cfg]="projektuNavCfg" class="flex bg-light"></app-sidenav>
+        <app-sidenav [cfg]="darbuNavCfg" class="flex bg-light"></app-sidenav>
+        <app-sidenav [cfg]="darbiniekuNavCfg" class="flex bg-light"></app-sidenav>
+    </div>
     <div>
         <app-tabula [masivs]="projekti" [cfg]="projektuCfg" [hidden]="skatsAizverts"></app-tabula>
         <app-tabula [masivs]="darbi" [cfg]="darbuCfg" [hidden]="skatsAizverts"></app-tabula>

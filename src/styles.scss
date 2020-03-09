@@ -7,6 +7,10 @@ html {
   overflow: auto !important;
 }
 
+body{
+  padding-right: 0 !important;
+}
+
 p {
   margin: 0;
 }
@@ -22,6 +26,7 @@ tr:hover {
 .component {
   display: flex;
 }
+
 
 @media (max-width: 767.98px) {
   .container {
