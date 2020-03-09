@@ -1,0 +1,27 @@
+<div class="component">
+    <div class="container" style="display: flex; flex-direction: column; width: 100%;">
+        <div style="display: flex;">
+            <i class="material-icons" data-toggle="modal" [attr.data-target]="'#mainModal'+ cfg.modalId">
+                {{cfg.icon}}
+            </i>
+            <h1> {{cfg.virsraksts}}</h1>
+        </div>
+        <table class="table table-hover table-sm">
+            <thead>
+                <tr>
+                    <th *ngFor="let lauks of laukuNosaukumi" scope="col">{{cfg.tabulaGalvasunVertibas[lauks]}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr (dblclick)="showModal(cfg.modalId)" *ngFor="let el of masivs | filter : searchText" (click)="setIzveletais(el)"
+                    [class.table-active]="izveletais==el">
+                    <td *ngFor="let lauks of laukuNosaukumi">{{el[lauks]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <app-modal [laukuNosaukumi]="laukuNosaukumi" [obj]="izveletais" [cfg]="cfg"></app-modal>
+    <!-- <div *ngIf="izveletais" class="container" style="display: flex; flex-direction: column; max-width: 80%;">
+        <app-labosana [laukuNosaukumi]="laukuNosaukumi" [obj]="izveletais" [cfg]="cfg"></app-labosana>
+    </div> -->
+</div>

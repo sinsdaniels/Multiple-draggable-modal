@@ -1,0 +1,70 @@
+<!-- <button type="button" class="btn btn-outline-dark" data-toggle="modal" [attr.data-target]="'#mainModal'+ cfg.modalId">
+    Labot
+</button> -->
+<div class="modal fade modalDragable" data-backdrop="false" data-focus="false" id="mainModal{{cfg.modalId}}" tabindex="-1" role="dialog"
+    aria-labelledby="mainModalTitle" aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mainModalTitle">"{{cfg.virsraksts}}" labošana</h5>
+                <div class="modalIcons">
+                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" [attr.data-target]="'#mainModal'+ cfg.modalId">
+                        <i class="material-icons">
+                            library_books
+                        </i>
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="obj" class="modal-body">
+                <div class="row" style="margin-bottom: 4px;">
+                    <div *ngFor="let lauks of laukuNosaukumi" class="col-6">
+                        <input type="text" class="form-control" [(ngModel)]="obj[lauks]" [name]="obj[lauks]"
+                            [placeholder]="cfg.tabulaGalvasunVertibas[lauks]">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button style="width: 45%;" type="button" class="btn btn-outline-danger" data-dismiss="modal">Atcelt</button>
+                <button style="width: 45%;" type="button" class="btn btn-primary mb-2" data-dismiss="modal">Saglabāt</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------ -->
+<!-- 
+<div class="modal fade modalDragable" data-backdrop="false" id="mainModal" tabindex="-1" role="dialog"
+    aria-labelledby="mainModalTitle" aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+            </div>
+            <div class="modal-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="darbinieksAktivs"
+                        [checked]="props.aktivs" (input)="props.aktivs = $event.target.value">
+                    <label class="form-check-label" for="darbinieksAktivs">
+                        Aktīvs
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="zinojumsEpasta"
+                        [checked]="props.epasts" (input)="props.epasts = $event.target.value">
+                    <label class="form-check-label" for="zinojumsEpasta">
+                        Zinojumi uz e-pastu
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="zinojumsSMS" [checked]="props.sms"
+                        (input)="props.sms = $event.target.value">
+                    <label class="form-check-label" for="zinojumsSMS">
+                        Zinojumi uz sms
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark pressed" data-dismiss="modal">Saglabāt</button>
+            </div>
+        </div>
+    </div>
+</div> -->

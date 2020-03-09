@@ -1,0 +1,44 @@
+.modal{
+    // width: 33.33%;
+    width: 500px;
+    height:auto;
+    overflow: hidden;
+}
+.show {
+    display: flex !important;
+}
+.modalDragable{
+    background-color: var(--modal-bg-color); 
+}
+
+.form-control, .form-control:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+}
+.modal-dialog{
+    width: 100%;
+    margin: 0;
+}
+
+.modalIcons{
+    display: flex;
+}
+.modalIcons button{
+    border: 0;
+    padding: 0;
+    color: unset;
+    display: flex;
+    outline: none;
+    margin: 0 4px;
+}
+.modalIcons button:hover{
+    color: var(--info);
+    background-color: unset;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: space-around;
+}
