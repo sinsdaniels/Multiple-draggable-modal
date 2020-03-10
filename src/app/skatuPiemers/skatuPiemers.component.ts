@@ -16,8 +16,7 @@ export class SkatuPiemersComponent implements OnInit {
     tabulaGalvasunVertibas: {
       id: "#",
       nosaukums: "Nosaukums",
-      apraksts: "Apraksts",
-      darbiId: "Darbi"
+      apraksts: "Apraksts"
     },
     modalId: 1
   }
@@ -33,7 +32,6 @@ export class SkatuPiemersComponent implements OnInit {
     tabulaGalvasunVertibas: {
       id: "#",
       nosaukums: "Nosaukums",
-      atbildigais: "Atbildīgais",
       apraksts: "Apraksts",
       uzdevums: "Uzdevums"
     },
@@ -65,24 +63,34 @@ export class SkatuPiemersComponent implements OnInit {
   public darbinieki;
   public darbi;
 
-  public projektaDarb;
+  public projektaDarbi;
+  public darbuDarbinieki;
 
   constructor(private dt: DataService) {
     this.projekti = dt.getProjekti();
     this.darbinieki = dt.getDarbinieki(); //this.darbinieki ir jānofiltrē pēc "Projekti" izvēlētās vērtības un resultāts jāpiešķir šim this.darbinieki
-    //this.getProjektaDarb(this.projekti);
     this.darbi = dt.getDarbi();
   }
 
-  // getProjektaDarb(projekts) {
-  //   this.projektaDarb = [];
-  //   this.darbinieki.forEach(element => {
-  //     if (projekts.id == element.projektsId) {
-  //       this.projektaDarb.push(element);
-  //     }
-  //   });
-  //   return this.projektaDarb
-  // }
+  getProjektaDarbi(izveletaisProjekts) {
+    this.projektaDarbi = [];
+    this.darbi.forEach(element => {
+      if (izveletaisProjekts.id == element.projektsId) {
+        this.projektaDarbi.push(element);
+      }
+    });
+    return this.projektaDarbi
+  }
+
+  getDarbuDarbinieki(izveletaisDarbs) {
+    this.darbuDarbinieki = [];
+    this.darbinieki.forEach(element => {
+      if (izveletaisDarbs.id == element.darbsId) {
+        this.darbuDarbinieki.push(element);
+      }
+    });
+    return this.darbuDarbinieki
+  }
 
   public skatsAizverts = false;
 

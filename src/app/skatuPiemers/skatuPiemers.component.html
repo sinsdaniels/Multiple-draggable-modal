@@ -4,9 +4,9 @@
         <app-sidenav [cfg]="darbuNavCfg" class="flex bg-light"></app-sidenav>
         <app-sidenav [cfg]="darbiniekuNavCfg" class="flex bg-light"></app-sidenav>
     </div>
-    <div>
-        <app-tabula [masivs]="projekti" [cfg]="projektuCfg" [hidden]="skatsAizverts"></app-tabula>
-        <app-tabula [masivs]="darbi" [cfg]="darbuCfg" [hidden]="skatsAizverts"></app-tabula>
-        <app-tabula [masivs]="darbinieki" [cfg]="darbiniekuCfg" [hidden]="skatsAizverts"></app-tabula>
+    <div class="flex">
+        <app-tabula [masivs]="projekti" [cfg]="projektuCfg" [hidden]="skatsAizverts" (izveletaisEvent)="getProjektaDarbi($event)"></app-tabula>
+        <app-tabula [masivs]="projektaDarbi" [cfg]="darbuCfg" [hidden]="skatsAizverts" (izveletaisEvent)="getDarbuDarbinieki($event)"></app-tabula>
+        <app-tabula [masivs]="darbuDarbinieki" [cfg]="darbiniekuCfg" [hidden]="skatsAizverts"></app-tabula>
     </div>
 </div>

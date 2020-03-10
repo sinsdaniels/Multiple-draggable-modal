@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tabula',
@@ -10,6 +10,7 @@ export class TabulaComponent implements OnInit {
 
   @Input() masivs: Array<any>;
   @Input() cfg: Itabula;
+  @Output() izveletaisEvent = new EventEmitter();
 
   izveletais;
   laukuNosaukumi: Array<String>  = [];
@@ -18,7 +19,14 @@ export class TabulaComponent implements OnInit {
 
   setIzveletais(el) {
     this.izveletais = el;
+    this.setParentIzveletais();
     return this.izveletais;
+  }
+  
+  setParentIzveletais(){
+    //console.log(this.izveletais);
+    this.izveletaisEvent.emit(this.izveletais);
+
   }
   showModal(modalId){
     console.log("Double click registred..");
