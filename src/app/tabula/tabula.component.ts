@@ -6,32 +6,36 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./tabula.component.scss']
 })
 export class TabulaComponent implements OnInit {
-
-
+  searchInput;
   @Input() masivs: Array<any>;
   @Input() cfg: Itabula;
   @Output() izveletaisEvent = new EventEmitter();
+  // @Output() mekletajaVertiba = new EventEmitter();
 
   izveletais;
-  laukuNosaukumi: Array<String>  = [];
+  laukuNosaukumi: Array<String> = [];
   constructor() {
   }
+  
+  // setSearchInput(){
+  //   this.mekletajaVertiba.emit(this.searchInput);
+  // }
 
   setIzveletais(el) {
     this.izveletais = el;
     this.setParentIzveletais();
     return this.izveletais;
   }
-  
-  setParentIzveletais(){
+
+  setParentIzveletais() {
     //console.log(this.izveletais);
     this.izveletaisEvent.emit(this.izveletais);
 
   }
-  showModal(modalId){
+  showModal(modalId) {
     console.log("Double click registred..");
     console.log(this.cfg.modalId);
-    $('#mainModal'+modalId).modal('show');
+    $('#mainModal' + modalId).modal('show');
   }
   ngOnInit() {
     for (let n in this.cfg.tabulaGalvasunVertibas) {

@@ -5,6 +5,7 @@
         <app-sidenav [cfg]="darbiniekuNavCfg" class="flex bg-light"></app-sidenav>
     </div>
     <div class="flex">
+        <!-- (mekletajaVertiba)="mekletajaInput($event)" -->
         <app-tabula [masivs]="projekti" [cfg]="projektuCfg" [hidden]="skatsAizverts" (izveletaisEvent)="getProjektaDarbi($event)"></app-tabula>
         <app-tabula [masivs]="projektaDarbi" [cfg]="darbuCfg" [hidden]="skatsAizverts" (izveletaisEvent)="getDarbuDarbinieki($event)"></app-tabula>
         <app-tabula [masivs]="darbuDarbinieki" [cfg]="darbiniekuCfg" [hidden]="skatsAizverts"></app-tabula>

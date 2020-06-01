@@ -2,15 +2,9 @@
     display: flex;
     flex-wrap: wrap;
 }
-
 .sidenav{
     display: flex;
     flex-direction: column;
+    z-index: 1051;
 }
 
-.btn-outline-dark{
-    border-color: transparent;
-}
-.tabula__title{
-    padding-right: 10px;
-}

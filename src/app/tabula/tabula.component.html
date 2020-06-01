@@ -4,7 +4,13 @@
             <i class="material-icons" data-toggle="modal" [attr.data-target]="'#mainModal'+ cfg.modalId">
                 {{cfg.icon}}
             </i>
-            <h1> {{cfg.virsraksts}}</h1>
+            <h1 class="tabula__title">{{cfg.virsraksts}}</h1>
+            <div>
+                <span class="badge badge-pill badge-dark">{{searchInput}}</span>
+            </div>
+        </div>
+        <div>
+            <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Meklēt" aria-label="Search" [(ngModel)]="searchInput">
         </div>
         <table class="table table-hover table-sm">
             <thead>
@@ -13,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr (dblclick)="showModal(cfg.modalId)" *ngFor="let el of masivs | filter : searchText" (click)="setIzveletais(el)"
+                <tr (dblclick)="showModal(cfg.modalId)" *ngFor="let el of masivs | filter : searchInput" (click)="setIzveletais(el)"
                     [class.table-active]="izveletais==el">
                     <td *ngFor="let lauks of laukuNosaukumi">{{el[lauks]}}</td>
                 </tr>

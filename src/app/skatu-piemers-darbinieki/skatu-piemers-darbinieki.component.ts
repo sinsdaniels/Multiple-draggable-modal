@@ -1,16 +1,15 @@
-import { Component, OnInit} from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Itabula } from '../tabula/tabula.component';
 import { ISideNav } from '../sidenav/sidenav.component';
 
 @Component({
-  selector: 'app-skatuPiemers',
-  templateUrl: './skatuPiemers.component.html',
-  styleUrls: ['./skatuPiemers.component.scss']
+  selector: 'app-skatu-piemers-darbinieki',
+  templateUrl: './skatu-piemers-darbinieki.component.html',
+  styleUrls: ['./skatu-piemers-darbinieki.component.scss']
 })
-
-export class SkatuPiemersComponent implements OnInit {
-
+export class SkatuPiemersDarbiniekiComponent implements OnInit {
   projektuCfg: Itabula = {
     virsraksts: "Projekti",
     icon: "description",
@@ -50,7 +49,8 @@ export class SkatuPiemersComponent implements OnInit {
     tabulaGalvasunVertibas: {
       id: "#",
       vards: "Vārds",
-      uzvards: "Uzvārds"
+      uzvards: "Uzvārds",
+      amats: "Amats"
     },
     modalId: 3
   }
@@ -64,34 +64,36 @@ export class SkatuPiemersComponent implements OnInit {
   public darbinieki;
   public darbi;
 
+  public darbiniekuProjekti;
   public projektaDarbi;
   public darbuDarbinieki;
+  public projektuDarbi;
 
   constructor(private dt: DataService) {
-    this.projekti = dt.getProjekti();
     this.darbinieki = dt.getDarbinieki(); //this.darbinieki ir jānofiltrē pēc "Projekti" izvēlētās vērtības un resultāts jāpiešķir šim this.darbinieki
+    this.projekti = dt.getProjekti();
     this.darbi = dt.getDarbi();
   }
 
 
-  getProjektaDarbi(izveletaisProjekts) {
-    this.projektaDarbi = [];
-    this.darbi.forEach(element => {
-      if (izveletaisProjekts.id == element.projektsId) {
-        this.projektaDarbi.push(element);
+  getDarbiniekuProjekti(izveletaisDarbinieks) {
+    this.darbiniekuProjekti = [];
+    this.projekti.forEach(element => {
+      if (izveletaisDarbinieks.id == element.darbinieksId) {
+        this.darbiniekuProjekti.push(element);
       }
     });
-    return this.projektaDarbi
+    return this.darbiniekuProjekti
   }
 
-  getDarbuDarbinieki(izveletaisDarbs) {
-    this.darbuDarbinieki = [];
-    this.darbinieki.forEach(element => {
-      if (izveletaisDarbs.id == element.darbsId) {
-        this.darbuDarbinieki.push(element);
+  getProjektuDarbi(izveletaisProjekts) {
+    this.projektuDarbi = [];
+    this.darbi.forEach(element => {
+      if (izveletaisProjekts.id == element.projektsId) {
+        this.projektuDarbi.push(element);
       }
     });
-    return this.darbuDarbinieki
+    return this.projektuDarbi
   }
 
   // mekletajaInput(el){

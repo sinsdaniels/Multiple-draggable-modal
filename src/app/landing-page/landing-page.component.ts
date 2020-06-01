@@ -66,7 +66,8 @@ export class LandingPageComponent implements OnInit {
   constructor() {
     this.biznesaElementi = [
       { route: "/multipleModal", pogasText: "Multiple modal", apraksts: "Multiple modal" },
-      { route: "/skatuPiemers", pogasText: "Projekti & Darbinieki", apraksts: "Master detail table" }
+      { route: "/skatuPiemers", pogasText: "Projekti", apraksts: "Master detail table" },
+      { route: "/skatuPiemersDarbinieki", pogasText: "Darbinieki", apraksts: "Master detail table" }
     ]
   }
 

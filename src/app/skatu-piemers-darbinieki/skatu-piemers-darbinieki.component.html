@@ -1,0 +1,13 @@
+<div class="flex">
+    <div class="sidenav">
+        <app-sidenav [cfg]="darbiniekuNavCfg" class="flex bg-light"></app-sidenav>
+        <app-sidenav [cfg]="projektuNavCfg" class="flex bg-light"></app-sidenav>
+        <app-sidenav [cfg]="darbuNavCfg" class="flex bg-light"></app-sidenav>
+    </div>
+    <div class="flex">
+        <!-- (mekletajaVertiba)="mekletajaInput($event)" -->
+        <app-tabula [masivs]="darbinieki" [cfg]="darbiniekuCfg" [hidden]="skatsAizverts" (izveletaisEvent)="getDarbiniekuProjekti($event)"></app-tabula>
+        <app-tabula [masivs]="darbiniekuProjekti" [cfg]="projektuCfg" [hidden]="skatsAizverts" (izveletaisEvent)="getProjektuDarbi($event)"></app-tabula>
+        <app-tabula [masivs]="projektuDarbi" [cfg]="darbuCfg" [hidden]="skatsAizverts"></app-tabula>
+    </div>
+</div>
